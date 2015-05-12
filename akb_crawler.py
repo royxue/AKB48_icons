@@ -15,7 +15,7 @@ def akb_cralwer():
         for mmb in soup.find_all('img', width=170):
             img_link = "http:" + mmb.get('src')
             mmb_info = re.findall(pat, img_link)
-            img_name = "%s_%s.png" % (mmb_info[0][0], mmb_info[0][1])
+            img_name = "./%s/%s.png" % (mmb_info[0][0], mmb_info[0][1])
             urllib.urlretrieve(img_link, img_name)
             print "%s == Get" % (mmb_info[0][1])
 
